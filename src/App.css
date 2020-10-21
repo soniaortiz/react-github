@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+h5{
+  color: gray;
+}
+
+li{
+  list-style-type:none;
+  text-align: left;
+  padding: 5px;
+}
+
+button{
+  margin: 5px;
+  background-color: black;
+  color: white;
+}
+
+.userReposContainer{
+  /* background-color: #61dafb; */
+  display: flex;
+  justify-content: center;
+}
+
+a{
+  text-decoration: none;
+}
+a:visited{
+  color: white;
+}

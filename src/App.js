@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {SearchRepoListContainer} from './components/SearchRepoListContainer'
+import {BookMarkedRepos} from './components/BookMarkedRepos'
+import {BrowserRouter, Route} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Route exact path='/' component={SearchRepoListContainer}/>
+        <Route exact path='/bookmarked-repos' component={BookMarkedRepos}/>
+      </BrowserRouter>
     </div>
   );
 }
