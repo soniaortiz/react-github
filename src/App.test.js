@@ -1,9 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders the view', async () => {
+  const { getByText, findByAltText } = render(<App />);
+  const titleElement = getByText(/GitHub Search/);
+  expect(titleElement).toBeInTheDocument();
+
+  const searchBar = await findByAltText('searchBar')
+  expect(searchBar).toBeInTheDocument()
+  
 });
