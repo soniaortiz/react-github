@@ -65,3 +65,9 @@ a{
 a:visited{
   color: white;
 }
+
+li::before{
+  content: "\1F516";
+  padding: 5px;
+  
+}

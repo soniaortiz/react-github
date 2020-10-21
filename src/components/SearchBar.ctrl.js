@@ -1,11 +1,10 @@
 import React from 'react'
 const baseURL = 'https://api.github.com/'
-    // let timerId
-
 
 export function makeCall ({ target }){
     const userName = target.value
     console.log(target.value)
+    this.setState({inputValue: target.value})
     if (this.timerId) {
         clearTimeout(this.timerId)
     }
