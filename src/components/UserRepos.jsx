@@ -1,6 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+// import {dispatch} from 'redux'
+import { bookmarkRepoAction } from '../redux/actions'
 
 export const UserRepos = ({ UserReposList, errorMessage }) => {
+    const bookMarkRepo = () => {
+        console.log("bookMarkRepo")
+    }
+
     return (
         <div className="userReposContainer">
             {
@@ -9,8 +16,9 @@ export const UserRepos = ({ UserReposList, errorMessage }) => {
                         {
                             UserReposList.map((repoData, index) => {
                                 return (
-                                    <li key={index + 1}>
-                                        {repoData.name}
+                                    <li key={repoData.id} >
+                                        <input type="checkbox" value={index} onClick={bookMarkRepo} />
+                                        <a href={repoData.svn_url}>{repoData.name}</a>
                                     </li>
                                 )
                             })
@@ -24,3 +32,8 @@ export const UserRepos = ({ UserReposList, errorMessage }) => {
         </div>
     )
 }
+
+export default connect(null, {
+    // dispatchBookmark: () => dispatch(bookmarkRepoAction)
+
+})(UserRepos)
